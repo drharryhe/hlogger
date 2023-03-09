@@ -137,7 +137,7 @@ func newFileLogWriter() io.Writer {
 	}
 
 	// 创建文件并写入内容
-	file, err := os.OpenFile(fileName, os.O_WRONLY|os.O_APPEND, 0666)
+	file, err := os.OpenFile(fileName, os.O_WRONLY|os.O_APPEND|os.O_CREATE, 0666)
 	if err != nil {
 		fmt.Printf("failed to create log file:%v", err)
 		os.Exit(-1)
